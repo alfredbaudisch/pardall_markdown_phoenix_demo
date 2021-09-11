@@ -1,0 +1,5 @@
+%{
+published: true
+}
+---
+Content
