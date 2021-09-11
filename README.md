@@ -1,4 +1,6 @@
-# PardallMarkdown
+# PardallMarkdown Phoenix LiveView Demo
+
+Basic demo project for the [PardallMarkdown](https://github.com/alfredbaudisch/pardall_markdown) framework. 
 
 To start your Phoenix server:
 
