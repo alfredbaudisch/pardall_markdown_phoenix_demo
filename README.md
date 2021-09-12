@@ -4,7 +4,7 @@ Basic demo project for the [PardallMarkdown](https://github.com/alfredbaudisch/p
 
 Notice: this demo project is incomplete and lacking sample content while PardallMarkdown (the framework) itself is ready to be used
 
-Expect this demo and a video tutorial do be released by around 18/09.
+Expect this demo and a video tutorial to be released by around 18/09.
 
 To start your Phoenix server:
 
