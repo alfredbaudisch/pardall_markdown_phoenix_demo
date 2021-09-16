@@ -102,6 +102,8 @@ defmodule PardallMarkdownWeb do
 
       import PardallMarkdownWeb.Utils
       import PardallMarkdownWeb.ContentHelpers
+      import PardallMarkdownWeb.PardallMarkdownHelpers
+      import PardallMarkdownWeb.Live.PostComponents
     end
   end
 

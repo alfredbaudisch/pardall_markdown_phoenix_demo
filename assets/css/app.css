@@ -1,5 +1,5 @@
 /* This file is for your main application css. */
-@import './phoenix.css';
+@import './bootstrap.min.css';
 
 /* LiveView specific classes for your customizations */
 .phx-no-feedback.invalid-feedback,
@@ -86,4 +86,122 @@
   color: #a94442;
   display: block;
   margin: -1rem 0 2rem;
+}
+
+.blog-header-logo {
+  font-size: 2.25rem;
+}
+
+.blog-post {
+  margin-bottom: 4rem;
+}
+.blog-post-title {
+  margin-bottom: .25rem;
+}
+.blog-post-meta {
+  margin-bottom: 1.25rem;
+  color: #727272;
+}
+
+/* ------------------------------- */
+/* Collapsible menu
+/* ------------------------------- */
+.btn-toggle {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 600;
+  color: rgba(0, 0, 0, .65);
+  background-color: transparent;
+  border: 0;
+}
+.btn-toggle:hover,
+.btn-toggle:focus {
+  color: rgba(0, 0, 0, .85);
+  background-color: #d2f4ea;
+}
+
+.btn-toggle::before {
+  width: 1.25em;
+  line-height: 0;
+  content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='rgba%280,0,0,.5%29' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 14l6-6-6-6'/%3e%3c/svg%3e");
+  transition: transform .35s ease;
+  transform-origin: .5em 50%;
+}
+
+.btn-toggle[aria-expanded="true"] {
+  color: rgba(0, 0, 0, .85);
+}
+.btn-toggle[aria-expanded="true"]::before {
+  transform: rotate(90deg);
+}
+
+.collapsible_sidebar ul {
+  padding-left: 1.2em;
+}
+
+.collapsible_sidebar > ul {
+  padding: 0;
+}
+
+.collapsible_sidebar li {
+  list-style: none;
+}
+
+.collapsible_sidebar li > a {
+  padding-left: 1em;
+}
+
+/* ------------------------------- */
+/* Categories breadcrumbs
+/* ------------------------------- */
+.crumbs {
+  padding: 4px 4px 4px 0px;
+ }
+.crumbs h3 {
+  display: none;
+ }
+.crumbs ul {
+  display: inline;
+  padding-left: 0;
+  margin-left: 0;
+ }
+.crumbs ul li {
+  display: inline;
+ }
+
+.crumbs ul li a:link {
+  padding: .25em;
+ }
+
+ /* No left padding in the 1st link */
+.crumbs > ul > li > a:link {
+  padding: .25em .25em .25em 0;
+}
+
+.crumbs ul ul li::before {
+  width: 1.25em;
+  line-height: 0;
+  content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='rgba%280,0,0,.5%29' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 14l6-6-6-6'/%3e%3c/svg%3e");
+}
+
+.post-card-taxonomies ul li a:link {  
+  text-decoration: none;
+  color: rgba(var(--bs-primary-rgb), var(--bs-text-opacity)) !important;
+  font-weight: bold;
+}
+
+.post-card-taxonomies ul ul li::before {
+  width: 1.25em;
+  line-height: 0;
+  content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='rgba%280,0,0,.5%29' stroke-linecap='round' stroke-linejoin='round' stroke-width='4' d='M5 14l6-6-6-6'/%3e%3c/svg%3e");
+}
+
+body {
+  min-height: 75rem;
+  padding-top: 4.5rem;
+}
+
+/* Remove Bootstrap smooth scroll */
+html {
+  scroll-behavior: initial !important;
 }

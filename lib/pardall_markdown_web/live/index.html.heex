@@ -1,25 +1,16 @@
-<section class="row">
-  <ul>
-  <%= for post <- @posts do %>
-    <li>
-      <%= live_redirect post.title, to: post.slug %> (<%= Date.to_iso8601(post.date) %>) <%= raw post.summary %>
-    </li>
-  <% end %>
-  </ul>
-</section>
-
-<hr/>
-<h2>Taxonomy tree</h2>
-<section class="row">
+<%= if(@live_action == :taxonomy_tree) do %>
+  <h1>Taxonomy Tree</h1>
   <%= raw taxonomy_tree_list(@taxonomy_tree) %>
-</section>
-<hr/>
-<h2>Content tree</h2>
-<section class="row">
+<% end %>
+
+<%= if(@live_action == :content_tree) do %>
+  <h1>Content Tree</h1>
   <%= raw taxonomy_tree_list(@content_tree) %>
-</section>
-<hr/>
-<h2>Docs Content tree</h2>
-<section class="row">
-  <%= raw taxonomy_tree_list(@docs_tree) %>
-</section>
+<% end %>
+
+<%= if(@live_action == :index) do %>
+  <h1>Latest Updates</h1>
+  <%= for post <- @posts do %>
+    <.card content={post} col_class="col"/>
+  <% end %>
+<% end %>
