@@ -10,6 +10,11 @@
     <div class="row">
       <article class="blog-post">
       <h1><%= @content.title %></h1>
+
+      <%= if(not is_nil(@content.index_post) and not is_nil(@content.index_post.content)) do %>
+        <%= raw(@content.index_post.content) %>
+      <% end %>
+
       <%= for post <- @content.children do %>
         <.card content={post} col_class="col"/>
       <% end %>
