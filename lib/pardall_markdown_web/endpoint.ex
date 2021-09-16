@@ -24,7 +24,7 @@ defmodule PardallMarkdownWeb.Endpoint do
   plug Plug.Static,
     at: "/",
     from: :pardall_markdown_phoenix_demo,
-    gzip: true,
+    gzip: false,
     only: ~w(assets fonts images favicon.ico robots.txt)
 
   plug Plug.Static,
