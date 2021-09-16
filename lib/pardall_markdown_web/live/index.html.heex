@@ -23,3 +23,51 @@
 <section class="row">
   <%= raw taxonomy_tree_list(@docs_tree) %>
 </section>
+
+<hr/>
+
+<ul class="ls-nav">
+  <li id="expand1" >
+    <div>
+      <a class="collapsed btn-toggle" role="button" data-bs-toggle="collapse" data-bs-target="#collapseContent1" aria-expanded="false" aria-controls="collapseContent1"/>
+      <a href="/test">Lorem Ipsum </a>
+    </div>
+    <div class="collapse" id="collapseContent1">
+      <ul class="ls-inner">
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li id="expand2">
+          <a class="collapseContent2" role="button" data-bs-toggle="collapse" data-bs-target="#collapseContent2" aria-expanded="false" aria-controls="collapseContent2">Lorem Ipsum</a>
+          <div class="collapse" id="collapseContent2">
+            <ul class="ls-inner-dot">
+              <li>
+                <a class="collapseContent2" role="button" data-bs-toggle="collapse" data-bs-target="#collapseContent3" aria-expanded="false" aria-controls="collapseContent3">Lorem Ipsum</a>
+                <div class="collapse" id="collapseContent3">
+                  <ul class="ls-inner-dot">
+                    <li>
+                      <a class="collapseContent2" role="button" data-bs-toggle="collapse" data-bs-target="#collapseContent4" aria-expanded="false" aria-controls="collapseContent4">Lorem Ipsum</a>
+                      <div class="collapse" id="collapseContent4">
+                        <ul class="ls-inner-dot">
+                          <li>Lorem</li>
+                          <li>Lorem</li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li>Lorem</li>
+                  </ul>
+                </div>
+              </li>
+              <li>Lorem</li>
+            </ul>
+          </div>
+        </li>
+        <li>Lorem</li>
+      </ul>
+    </div>
+  </li>
+  <li>Lorem</li>
+  <li>Lorem</li>
+  <li>Lorem</li>
+</ul>
