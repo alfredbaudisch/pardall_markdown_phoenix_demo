@@ -35,6 +35,8 @@ defmodule PardallMarkdownWeb.Router do
     pipe_through :browser
 
     live "/", Live.Index, :index, container: {:main, class: "container"}
+    live "/taxonomy-tree", Live.Index, :taxonomy_tree, container: {:main, class: "container"}
+    live "/content-tree", Live.Index, :content_tree, container: {:main, class: "container"}
     live "/*slug", Live.Content, :show, container: {:main, class: "container-fluid"}
   end
 

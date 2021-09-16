@@ -109,7 +109,6 @@
 .btn-toggle {
   display: inline-flex;
   align-items: center;
-  padding: .25rem .5rem;
   font-weight: 600;
   color: rgba(0, 0, 0, .65);
   background-color: transparent;
@@ -134,6 +133,22 @@
 }
 .btn-toggle[aria-expanded="true"]::before {
   transform: rotate(90deg);
+}
+
+.collapsible_sidebar ul {
+  padding-left: 1.2em;
+}
+
+.collapsible_sidebar > ul {
+  padding: 0;
+}
+
+.collapsible_sidebar li {
+  list-style: none;
+}
+
+.collapsible_sidebar li > a {
+  padding-left: 1em;
 }
 
 /* ------------------------------- */
@@ -179,6 +194,11 @@
   width: 1.25em;
   line-height: 0;
   content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='rgba%280,0,0,.5%29' stroke-linecap='round' stroke-linejoin='round' stroke-width='4' d='M5 14l6-6-6-6'/%3e%3c/svg%3e");
+}
+
+body {
+  min-height: 75rem;
+  padding-top: 4.5rem;
 }
 
 /* Remove Bootstrap smooth scroll */

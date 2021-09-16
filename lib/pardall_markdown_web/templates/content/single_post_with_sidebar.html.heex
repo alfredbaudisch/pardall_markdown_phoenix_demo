@@ -1,7 +1,9 @@
 <div class="row">
   <div class="col-lg-2">
-    <h6><%= @top_taxonomy.title %></h6>
-    <%= raw taxonomy_tree_list(@content_tree) %>
+    <h6><%= live_redirect @top_taxonomy.title, to: @top_taxonomy.slug %></h6>
+    <nav class="collapsible_sidebar">
+      <%= raw collapsible_taxonomy_tree_list(@content_tree) %>
+    </nav>
   </div>
 
   <div class="col-lg-10">

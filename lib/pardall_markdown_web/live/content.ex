@@ -45,6 +45,17 @@ defmodule PardallMarkdownWeb.Live.Content do
     |> assign(:top_taxonomy, root_tax)
   end
 
-  defp assign_content_tree(socket, %Link{slug: slug}),
-    do: socket |> assign(:content_tree, Repository.get_content_tree(slug))
+  defp assign_content_tree(socket, %Link{parents: [_|[root_tax|_]]}) do
+    topmost = Repository.get_by_slug!(root_tax)
+
+    socket
+    |> assign(:content_tree, Repository.get_content_tree(root_tax))
+    |> assign(:top_taxonomy, topmost)
+  end
+
+  defp assign_content_tree(socket, %Link{slug: slug} = link) do
+    socket
+    |> assign(:content_tree, Repository.get_content_tree(slug))
+    |> assign(:top_taxonomy, link)
+  end
 end

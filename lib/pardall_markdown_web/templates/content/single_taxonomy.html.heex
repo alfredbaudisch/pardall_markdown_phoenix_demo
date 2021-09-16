@@ -1,11 +1,19 @@
-<h1><%= @content.title %></h1>
+<div class="row">
+  <div class="col-lg-2">
+    <h6><%= live_redirect @top_taxonomy.title, to: @top_taxonomy.slug %></h6>
+    <nav class="collapsible_sidebar">
+      <%= raw collapsible_taxonomy_tree_list(@content_tree) %>
+    </nav>
+  </div>
 
-<section class="row">
-  <ul>
-  <%= for post <- @content.children do %>
-    <li>
-      <%= live_redirect post.title, to: post.slug %> (<%= Date.to_iso8601(post.date) %>) <%= raw post.summary %>
-    </li>
-  <% end %>
-  </ul>
-</section>
+  <div class="col-lg-10">
+    <div class="row">
+      <article class="blog-post">
+      <h1><%= @content.title %></h1>
+      <%= for post <- @content.children do %>
+        <.card content={post} col_class="col"/>
+      <% end %>
+      </article>
+    </div>
+  </div>
+</div>

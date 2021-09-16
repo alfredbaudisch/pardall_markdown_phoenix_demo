@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-sm-7 col-md-8">
+  <div class="col-sm-7 col-md-8 col-lg-10">
     <article class="blog-post">
       <nav class="crumbs"><%= raw taxonomy_tree_list(@content.taxonomies) %></nav>
       <h1 class="blog-post-title"><%= @content.title %></h1>      
@@ -15,7 +15,7 @@
     </article>
   </div>
 
-  <div class="col-sm-5 col-md-4">
+  <div class="col-sm-5 col-md-4 col-lg-2">
     <strong>Table of Contents</strong>
     <%= raw post_toc_list(@content.toc) %>
   </div>

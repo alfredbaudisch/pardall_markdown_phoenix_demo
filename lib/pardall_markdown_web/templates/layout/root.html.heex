@@ -11,18 +11,40 @@
   </head>
   <body>
     <a name="top"></a>
-    <div class="container">
-      <header class="blog-header py-3">
-        <div class="text-center">
-          <%= live_redirect "PardallMarkdown", to: "/", class: "blog-header-logo text-dark" %>
+
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <div class="container-fluid">
+          <%= live_redirect Application.get_env(:pardall_markdown, PardallMarkdown.Content)[:site_name],
+              to: "/", class: "navbar-brand" %>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <%= live_redirect "Home", to: "/", class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= live_redirect "Docs", to: "/documentation", class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= live_redirect "Blog", to: "/blog", class: "nav-link" %>
+            </li>
+          </ul>
         </div>
-      </header>
-    </div>
+      </div>
+    </nav>
 
     <%= @inner_content %>
 
     <div class="container py-4">
-      <a href="#top">Back to top of page</a>
+      <div class="d-flex justify-content-between">
+        <a class="p-2" href="#top">Back to top of page</a>
+        <nav class="d-flex justify-content-center">
+          <%= live_redirect "Categories", to: "/taxonomy-tree", class: "p-2 link-secondary" %>
+          <%= live_redirect "Sitemap", to: "/content-tree", class: "p-2 link-secondary" %>
+        </nav>
+      </div>
     </div>
   </body>
 </html>

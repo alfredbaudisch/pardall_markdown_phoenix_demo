@@ -24,4 +24,15 @@ defmodule PardallMarkdownWeb.Live.PostComponents do
     </div>
     """
   end
+
+  def taxonomy_card(assigns) do
+    ~H"""
+    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+      <div class="col p-4 d-flex flex-column position-static">
+        <h4 class="mb-0"><%= @content.title %></h4>
+        <%= live_redirect "", to: @content.slug, class: "stretched-link" %>
+      </div>
+    </div>
+    """
+  end
 end
