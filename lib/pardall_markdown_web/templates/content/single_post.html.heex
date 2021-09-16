@@ -1,8 +1,8 @@
 <div class="row">
   <div class="col-sm-7 col-md-8">
     <article class="blog-post">
-      <h1 class="blog-post-title"><%= @content.title %></h1>
-      <div id="crumbs"><%= raw taxonomy_tree_list(@content.taxonomies) %></div>
+      <nav class="crumbs"><%= raw taxonomy_tree_list(@content.taxonomies) %></nav>
+      <h1 class="blog-post-title"><%= @content.title %></h1>      
       <p class="blog-post-meta"><%= format_date(@content.date) %></p>      
 
       <%= if(not @content.is_published) do %>
@@ -27,11 +27,15 @@
   </div>
   <div class="row">
     <%= if(not is_nil(@content.link) and not is_nil(@content.link.previous)) do %>
-      <.card content={@content.link.previous} col_class="col-md-6"/>
+    <div class="col-md-6">
+      <.card content={List.first(@content.link.previous.children)}/>
+    </div>
     <% end %>
 
     <%= if(not is_nil(@content.link) and not is_nil(@content.link.next)) do %>
-      <.card content={@content.link.next} col_class="col-md-6"/>
+    <div class="col-md-6">
+      <.card content={List.first(@content.link.next.children)}/>
+    </div>
     <% end %>
   </div>
 <% end %>

@@ -139,27 +139,49 @@
 /* ------------------------------- */
 /* Categories breadcrumbs
 /* ------------------------------- */
-#crumbs {
-  background-color: #eee;
-  padding: 4px;
+.crumbs {
+  padding: 4px 4px 4px 0px;
  }
- #crumbs h3 {
+.crumbs h3 {
   display: none;
  }
- #crumbs ul {
+.crumbs ul {
   display: inline;
   padding-left: 0;
   margin-left: 0;
  }
- #crumbs ul li {
+.crumbs ul li {
   display: inline;
  }
- #crumbs ul li a:link {
-  padding: .2em;
+
+.crumbs ul li a:link {
+  padding: .25em;
  }
 
-#crumbs ul ul li::before {
+ /* No left padding in the 1st link */
+.crumbs > ul > li > a:link {
+  padding: .25em .25em .25em 0;
+}
+
+.crumbs ul ul li::before {
   width: 1.25em;
   line-height: 0;
   content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='rgba%280,0,0,.5%29' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 14l6-6-6-6'/%3e%3c/svg%3e");
+}
+
+.post-card-taxonomies ul li a:link {  
+  text-decoration: none;
+  color: rgba(var(--bs-primary-rgb), var(--bs-text-opacity)) !important;
+  font-weight: bold;
+}
+
+.post-card-taxonomies ul ul li::before {
+  width: 1.25em;
+  line-height: 0;
+  content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='rgba%280,0,0,.5%29' stroke-linecap='round' stroke-linejoin='round' stroke-width='4' d='M5 14l6-6-6-6'/%3e%3c/svg%3e");
+}
+
+/* Remove Bootstrap smooth scroll */
+html {
+  scroll-behavior: initial !important;
 }
