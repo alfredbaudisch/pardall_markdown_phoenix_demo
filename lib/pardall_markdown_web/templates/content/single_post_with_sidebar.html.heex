@@ -1,0 +1,48 @@
+<div class="row">
+  <div class="col-lg-2">
+    <h6><%= @top_taxonomy.title %></h6>
+    <%= raw taxonomy_tree_list(@content_tree) %>
+  </div>
+
+  <div class="col-lg-10">
+    <div class="row">
+      <article class="col-md-8 col-lg-9 blog-post">
+        <nav class="crumbs"><%= raw taxonomy_tree_list(@content.taxonomies) %></nav>
+        <h1 class="blog-post-title"><%= @content.title %></h1>      
+        <p class="blog-post-meta"><%= format_date(@content.date) %></p>      
+
+        <%= if(not @content.is_published) do %>
+        <p class="alert alert-danger" role="alert">
+            This post is still a draft, its contents may change at any time
+        </p>
+        <% end %>
+
+        <%= raw(@content.content) %>
+      </article>
+
+      <div class="col-md-4 col-lg-3">
+        <h6>Table of Contents</h6>
+        <%= raw post_toc_list(@content.toc) %>
+      </div>
+    </div>
+
+    <%= if(has_next_or_previous_posts?(@content)) do %>
+    <div class="row">
+      <h1>More Content</h1>
+    </div>
+    <div class="row">
+      <%= if(not is_nil(@content.link) and not is_nil(@content.link.previous)) do %>
+      <div class="col-md-6">
+        <.card content={List.first(@content.link.previous.children)}/>
+      </div>
+      <% end %>
+
+      <%= if(not is_nil(@content.link) and not is_nil(@content.link.next)) do %>
+      <div class="col-md-6">
+        <.card content={List.first(@content.link.next.children)}/>
+      </div>
+      <% end %>
+    </div>
+    <% end %>    
+  </div>
+</div>
