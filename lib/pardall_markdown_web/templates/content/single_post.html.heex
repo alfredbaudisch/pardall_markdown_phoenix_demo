@@ -1,30 +1,37 @@
-<%= if(not @content.is_published) do %>
-<p class="alert alert-danger" role="alert">
-    This post is still a draft, its contents may change at any time
-</p>
+<div class="row">
+  <div class="col-sm-7 col-md-8">
+    <article class="blog-post">
+      <h1 class="blog-post-title"><%= @content.title %></h1>
+      <div id="crumbs"><%= raw taxonomy_tree_list(@content.taxonomies) %></div>
+      <p class="blog-post-meta"><%= format_date(@content.date) %></p>      
+
+      <%= if(not @content.is_published) do %>
+      <p class="alert alert-danger" role="alert">
+          This post is still a draft, its contents may change at any time
+      </p>
+      <% end %>
+
+      <%= raw(@content.content) %>
+    </article>
+  </div>
+
+  <div class="col-sm-5 col-md-4">
+    <strong>Table of Contents</strong>
+    <%= raw post_toc_list(@content.toc) %>
+  </div>
+</div>
+
+<%= if(has_next_or_previous_posts?(@content)) do %>
+  <div class="row">
+    <h1>More Content</h1>
+  </div>
+  <div class="row">
+    <%= if(not is_nil(@content.link) and not is_nil(@content.link.previous)) do %>
+      <.card content={@content.link.previous} col_class="col-md-6"/>
+    <% end %>
+
+    <%= if(not is_nil(@content.link) and not is_nil(@content.link.next)) do %>
+      <.card content={@content.link.next} col_class="col-md-6"/>
+    <% end %>
+  </div>
 <% end %>
-
-<h1><%= @content.title %></h1>
-<%= raw(@content.content) %>
-
-<h2>Related</h2>
-<ul>
-<li>Previous: <%= if(not is_nil(@content.link) and not is_nil(@content.link.previous)) do live_redirect @content.link.previous.title, to: @content.link.previous.slug end %></li>
-<li>Next: <%= if(not is_nil(@content.link) and not is_nil(@content.link.next)) do (live_redirect @content.link.next.title, to: @content.link.next.slug) end %></li>
-</ul>
-
-<hr/>
-
-<h2>Categories</h2>
-<ul>
-<%= for category <- @content.taxonomies do %>
-    <li><%= live_redirect category.title, to: category.slug %></li>
-<% end %>
-</ul>
-
-<hr/>
-
-<h2>Table of Contents</h2>
-<section class="row">
-  <%= raw post_toc_list(@content.toc) %>
-</section>

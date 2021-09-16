@@ -1,30 +1,8 @@
-<section class="row">
-  <ul>
+<div class="row mb-2">
   <%= for post <- @posts do %>
-    <li>
-      <%= live_redirect post.title, to: post.slug %> (<%= Date.to_iso8601(post.date) %>) <%= raw post.summary %>
-    </li>
+    <.card content={post} col_class="col"/>
   <% end %>
-  </ul>
-</section>
-
-<hr/>
-<h2>Taxonomy tree</h2>
-<section class="row">
-  <%= raw taxonomy_tree_list(@taxonomy_tree) %>
-</section>
-<hr/>
-<h2>Content tree</h2>
-<section class="row">
-  <%= raw taxonomy_tree_list(@content_tree) %>
-</section>
-<hr/>
-<h2>Docs Content tree</h2>
-<section class="row">
-  <%= raw taxonomy_tree_list(@docs_tree) %>
-</section>
-
-<hr/>
+</div>
 
 <ul class="ls-nav">
   <li id="expand1" >
@@ -71,3 +49,21 @@
   <li>Lorem</li>
   <li>Lorem</li>
 </ul>
+
+<hr/>
+<h2>Taxonomy tree</h2>
+<section class="row">
+  <%= raw taxonomy_tree_list(@taxonomy_tree) %>
+</section>
+<hr/>
+<h2>Content tree</h2>
+<section class="row">
+  <%= raw taxonomy_tree_list(@content_tree) %>
+</section>
+<hr/>
+<h2>Docs Content tree</h2>
+<section class="row">
+  <%= raw taxonomy_tree_list(@docs_tree) %>
+</section>
+
+<hr/>

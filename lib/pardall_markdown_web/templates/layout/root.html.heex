@@ -10,21 +10,21 @@
     <script defer phx-track-static type="text/javascript" src={Routes.static_path(@conn, "/assets/app.js")}></script>
   </head>
   <body>
-    <header>
-      <section class="container">
-        <nav role="navigation">
-          <ul>
-            <li><a href="https://hexdocs.pm/phoenix/overview.html">Get Started</a></li>
-            <%= if function_exported?(Routes, :live_dashboard_path, 2) do %>
-              <li><%= link "LiveDashboard", to: Routes.live_dashboard_path(@conn, :home) %></li>
-            <% end %>
-          </ul>
-        </nav>
-        <%= live_redirect to: "/" do %>
-          <img src={Routes.static_path(@conn, "/images/phoenix.png")} alt="Phoenix Framework Logo"/>
-        <% end %>
-      </section>
-    </header>
-    <%= @inner_content %>
+    <a name="top"></a>
+    <div class="container">
+      <header class="blog-header py-3">
+        <div class="text-center">
+          <%= live_redirect "PardallMarkdown", to: "/", class: "blog-header-logo text-dark" %>
+        </div>
+      </header>
+    </div>
+
+    <main class="container">
+      <%= @inner_content %>
+    </main>
+
+    <div class="container py-4">
+      <a href="#top">Back to top of page</a>
+    </div>
   </body>
 </html>
