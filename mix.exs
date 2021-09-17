@@ -20,7 +20,7 @@ defmodule PardallMarkdownWeb.MixProject do
   def application do
     [
       mod: {PardallMarkdownWeb.Application, []},
-      extra_applications: [:logger, :runtime_tools, :pardall_markdown]
+      extra_applications: [:logger, :runtime_tools]
     ]
   end
 
@@ -45,8 +45,7 @@ defmodule PardallMarkdownWeb.MixProject do
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
-      {:esbuild, "~> 0.2", runtime: Mix.env() == :dev},
-      {:pardall_markdown, "~> 0.1.2"}
+      {:esbuild, "~> 0.2", runtime: Mix.env() == :dev}
     ]
   end
 
