@@ -13,11 +13,19 @@ defmodule PardallMarkdownWeb.Live.Content do
     {:ok, socket |> assign(:slug, slug) |> load_content()}
   end
 
-  def render(%{content: %Post{}} = assigns),
+  def render(%{content: %Post{}, top_taxonomy: %{slug: "/documentation"}} = assigns),
     do:
       Phoenix.View.render(
         PardallMarkdownWeb.ContentView,
         "single_post_with_sidebar.html",
+        assigns
+      )
+
+  def render(%{content: %Post{}} = assigns),
+    do:
+      Phoenix.View.render(
+        PardallMarkdownWeb.ContentView,
+        "single_post.html",
         assigns
       )
 
