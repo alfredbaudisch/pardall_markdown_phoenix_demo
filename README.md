@@ -10,7 +10,7 @@ Demo project for the [PardallMarkdown](https://github.com/alfredbaudisch/pardall
 - HTML helper and example to create a **collapsible PardallMarkdown content tree**.
 
 ## Want to know more?
-Check the [PardallMarkdown](https://github.com/alfredbaudisch/pardall_markdown) repository's README and or the library documentation.
+Check [PardallMarkdown](https://github.com/alfredbaudisch/pardall_markdown) repository's README and or the library documentation.
 
 ## Demo instructions
 To start your Phoenix server:
