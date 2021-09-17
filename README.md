@@ -1,11 +1,18 @@
 # PardallMarkdown Phoenix LiveView Demo
 
-Basic demo project for the [PardallMarkdown](https://github.com/alfredbaudisch/pardall_markdown) framework. 
+Demo project for the [PardallMarkdown](https://github.com/alfredbaudisch/pardall_markdown) framework. 
 
-Notice: this demo project is incomplete and lacking sample content while PardallMarkdown (the framework) itself is ready to be used
+## Demo Features
+- Example **Phoenix.LiveView website** that contains both **a Blog and a Documentation section**, both powered by PardallMarkdown **instant updates**.
+    - Showcases archive pages, trees, single posts, sidebars, table of contents, next and previous posts, static images, etc.
+- **Sample content**, with nested hierarchies, custom post metadata and taxonomy overrides and custom sorting. The sample content also includes local images and links.
+- **[HTML helpers](./lib/pardall_markdown_web/views/pardall_markdown_helpers.ex) for PardallMarkdown** content trees, taxonomy trees and table of contents.
+- HTML helper and example to create a **collapsible PardallMarkdown content tree**.
 
-Expect this demo and a video tutorial to be released by around 18/09.
+## Want to know more?
+Check the [PardallMarkdown](https://github.com/alfredbaudisch/pardall_markdown) repository's README and or the library documentation.
 
+## Demo instructions
 To start your Phoenix server:
 
 - Install dependencies with `mix deps.get`
@@ -14,14 +21,3 @@ To start your Phoenix server:
 - Start Phoenix endpoint with `mix phx.server`
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
-
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
-
-## Learn more
-
-- Official website: https://www.phoenixframework.org/
-- Guides: https://hexdocs.pm/phoenix/overview.html
-- Docs: https://hexdocs.pm/phoenix
-- Forum: https://elixirforum.com/c/phoenix-forum
-- Source: https://github.com/phoenixframework/phoenix
-
