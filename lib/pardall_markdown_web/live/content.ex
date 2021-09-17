@@ -1,6 +1,7 @@
 defmodule PardallMarkdownWeb.Live.Content do
   use PardallMarkdownWeb, :live_view
-  alias PardallMarkdown.{Post, Link}
+  alias PardallMarkdown.Content.{Post, Link}
+  alias PardallMarkdown.Repository
 
   def mount(%{"slug" => slug}, _session, socket) do
     slug = slug |> slug_params_to_slug()
@@ -13,7 +14,12 @@ defmodule PardallMarkdownWeb.Live.Content do
   end
 
   def render(%{content: %Post{}} = assigns),
-    do: Phoenix.View.render(PardallMarkdownWeb.ContentView, "single_post_with_sidebar.html", assigns)
+    do:
+      Phoenix.View.render(
+        PardallMarkdownWeb.ContentView,
+        "single_post_with_sidebar.html",
+        assigns
+      )
 
   def render(%{content: %Link{}} = assigns),
     do: Phoenix.View.render(PardallMarkdownWeb.ContentView, "single_taxonomy.html", assigns)
@@ -39,13 +45,13 @@ defmodule PardallMarkdownWeb.Live.Content do
   defp assign_page_title(socket, %Link{title: title}),
     do: socket |> assign(:page_title, compose_page_title(title))
 
-  defp assign_content_tree(socket, %Post{taxonomies: [root_tax|_]}) do
+  defp assign_content_tree(socket, %Post{taxonomies: [root_tax | _]}) do
     socket
     |> assign(:content_tree, Repository.get_content_tree(root_tax.slug))
     |> assign(:top_taxonomy, root_tax)
   end
 
-  defp assign_content_tree(socket, %Link{parents: [_|[root_tax|_]]}) do
+  defp assign_content_tree(socket, %Link{parents: [_ | [root_tax | _]]}) do
     topmost = Repository.get_by_slug!(root_tax)
 
     socket
