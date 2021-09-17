@@ -1,5 +1,6 @@
 %{
-    published: true
+    published: true,
+    thumbnail: "/static/images/van_gogh_bedroom.jpg"
 }
 ---
 

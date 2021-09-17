@@ -1,9 +1,11 @@
 %{
-    title: "Static Files",
+    title: "Categories",
     published: true,
     position: 0
 }
 ---
+
+Post: "Categories". The rest of the content is similar to some other sample pages from this sample content.
 
 Vincent Willem van Gogh (Dutch: [ˈvɪnsənt ˈʋɪləm vɑŋ ˈɣɔx] (About this soundlisten);[note 1] 30 March 1853 – 29 July 1890) was a Dutch post-impressionist painter who posthumously became one of the most famous and influential figures in the history of Western art. In a decade, he created about 2,100 artworks, including around 860 oil paintings, most of which date from the last two years of his life. They include landscapes, still lifes, portraits and self-portraits, and are characterised by bold colours and dramatic, impulsive and expressive brushwork that contributed to the foundations of modern art. He was not commercially successful, and his suicide at thirty-seven came after years of depression and poverty.
 

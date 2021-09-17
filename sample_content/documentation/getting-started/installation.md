@@ -1,36 +1,78 @@
 %{
     title: "Installation",
     published: true,
-    position: 0
+    position: 1
 }
 ---
 
-Vincent Willem van Gogh (Dutch: [ˈvɪnsənt ˈʋɪləm vɑŋ ˈɣɔx] (About this soundlisten);[note 1] 30 March 1853 – 29 July 1890) was a Dutch post-impressionist painter who posthumously became one of the most famous and influential figures in the history of Western art. In a decade, he created about 2,100 artworks, including around 860 oil paintings, most of which date from the last two years of his life. They include landscapes, still lifes, portraits and self-portraits, and are characterised by bold colours and dramatic, impulsive and expressive brushwork that contributed to the foundations of modern art. He was not commercially successful, and his suicide at thirty-seven came after years of depression and poverty.
+In order to build a Phoenix application, we will need a few dependencies installed in our Operating System:
 
-# Life
-## Early years
-Vincent Willem van Gogh was born on 30 March 1853 in Groot-Zundert, in the predominantly Catholic province of North Brabant in the Netherlands.[23] He was the oldest surviving child of Theodorus van Gogh (1822–1885), a minister of the Dutch Reformed Church, and his wife Anna Cornelia Carbentus (1819–1907). Van Gogh was given the name of his grandfather and of a brother stillborn exactly a year before his birth.[note 2] Vincent was a common name in the Van Gogh family. The name had been borne by his grandfather, the prominent art dealer Vincent (1789–1874), and a theology graduate at the University of Leiden in 1811. This Vincent had six sons, three of whom became art dealers, and may have been named after his own great-uncle, a sculptor (1729–1802).[25]
+- the Erlang VM and the Elixir programming language
+- a database - Phoenix recommends PostgreSQL but you can pick others or not use a database at all
+- Node.js for assets - which can be opt-out, especially if you are building APIs
+- and other optional packages.
 
-![](../../../static/images/van_gogh_self_portrait.jpg) {: .img-fluid}
+Please take a look at this list and make sure to install anything necessary for your system. Having dependencies installed in advance can prevent frustrating problems later on.
 
-## Etten, Drenthe and The Hague
-Van Gogh returned to Etten in April 1881 for an extended stay with his parents.[61] He continued to draw, often using his neighbours as subjects. In August 1881, his recently widowed cousin, Cornelia "Kee" Vos-Stricker, daughter of his mother's older sister Willemina and Johannes Stricker, arrived for a visit. He was thrilled and took long walks with her. Kee was seven years older than he was and had an eight-year-old son. Van Gogh surprised everyone by declaring his love to her and proposing marriage.[62] She refused with the words "No, nay, never" ("nooit, neen, nimmer").[63] After Kee returned to Amsterdam, Van Gogh went to The Hague to try to sell paintings and to meet with his second cousin, Anton Mauve. Mauve was the successful artist Van Gogh longed to be.[64] Mauve invited him to return in a few months and suggested he spend the intervening time working in charcoal and pastels; Van Gogh went back to Etten and followed this advice.[64]
+## Elixir 1.6 or later
 
-## Emerging artist
-### Nuenen and Antwerp (1883–1886)
-In Nuenen, Van Gogh focused on painting and drawing. Working outside and very quickly, he completed sketches and paintings of weavers and their cottages. Van Gogh also completed The Parsonage Garden at Nuenen, which was stolen from the Singer Laren in March 2020.[89][90] From August 1884, Margot Begemann, a neighbour's daughter ten years his senior, joined him on his forays; she fell in love and he reciprocated, though less enthusiastically. They wanted to marry, but neither side of their families were in favour. Margot was distraught and took an overdose of strychnine, but survived after Van Gogh rushed her to a nearby hospital.[82] On 26 March 1885, his father died of a heart attack
+Phoenix is written in Elixir, and our application code will also be written in Elixir. We won't get far in a Phoenix app without it! The Elixir site maintains a great [Installation Page](https://elixir-lang.org/install.html) to help.
 
-### Paris (1886–1888)
-Van Gogh moved to Paris in March 1886 where he shared Theo's rue Laval apartment in Montmartre and studied at Fernand Cormon's studio. In June the brothers took a larger flat at 54 rue Lepic.[111] In Paris, Vincent painted portraits of friends and acquaintances, still life paintings, views of Le Moulin de la Galette, scenes in Montmartre, Asnières and along the Seine. In 1885 in Antwerp he had become interested in Japanese ukiyo-e woodblock prints and had used them to decorate the walls of his studio; while in Paris he collected hundreds of them. He tried his hand at Japonaiserie, tracing a figure from a reproduction on the cover of the magazine Paris Illustre, The Courtesan or Oiran (1887), after Keisai Eisen, which he then graphically enlarged in a painting
+If we have just installed Elixir for the first time, we will need to install the Hex package manager as well. Hex is necessary to get a Phoenix app running (by installing dependencies) and to install any extra dependencies we might need along the way.
 
-# Style and works
-## Artistic development
-Van Gogh drew, and painted with watercolours while at school, but only a few examples survive and the authorship of some has been challenged.[217] When he took up art as an adult, he began at an elementary level. In early 1882, his uncle, Cornelis Marinus, owner of a well-known gallery of contemporary art in Amsterdam, asked for drawings of The Hague. Van Gogh's work did not live up to expectations. Marinus offered a second commission, specifying the subject matter in detail, but was again disappointed with the result. Van Gogh persevered; he experimented with lighting in his studio using variable shutters and different drawing materials. For more than a year he worked on single figures – highly elaborate studies in black and white,[note 11] which at the time gained him only criticism. Later, they were recognised as early masterpieces.
+Here's the command to install Hex (If you have Hex already installed, it will upgrade Hex to the latest version):
 
-![](../../../static/images/van_gogh_potato_eaters.jpg) {: .img-fluid}
+```
+$ mix local.hex 
+```
 
-## Major series
-Van Gogh's stylistic developments are usually linked to the periods he spent living in different places across Europe. He was inclined to immerse himself in local cultures and lighting conditions, although he maintained a highly individual visual outlook throughout. His evolution as an artist was slow, and he was aware of his painterly limitations. He moved home often, perhaps to expose himself to new visual stimuli, and through exposure develop his technical skill.[242] Art historian Melissa McQuillan believes the moves also reflect later stylistic changes, and that Van Gogh used the moves to avoid conflict, and as a coping mechanism for when the idealistic artist was faced with the realities of his then current situation.
+## Erlang 20 or later
 
-### Portraits
-The portraits gave Van Gogh his best opportunity to earn. He believed they were "the only thing in painting that moves me deeply and that gives me a sense of the infinite."[241][244] He wrote to his sister that he wished to paint portraits that would endure, and that he would use colour to capture their emotions and character rather than aiming for photographic realism.[245] Those closest to Van Gogh are mostly absent from his portraits; he rarely painted Theo, Van Rappard or Bernard. The portraits of his mother were from photographs.
+Elixir code compiles to Erlang byte code to run on the Erlang virtual machine. Without Erlang, Elixir code has no virtual machine to run on, so we need to install Erlang as well.
+
+When we install Elixir using instructions from the Elixir [Installation Page](https://elixir-lang.org/install.html), we will usually get Erlang too. If Erlang was not installed along with Elixir, please see the [Erlang Instructions](https://elixir-lang.org/install.html#installing-erlang) section of the Elixir Installation Page for instructions.
+
+> A note about Erlang and Phoenix: while Phoenix itself only requires Erlang 20 or later, one of Phoenix's dependencies, [cowboy](https://github.com/ninenines/cowboy), depends on Erlang 22 or later since cowboy 2.8.0. It is recommended to either install Erlang 22 or add `{:cowboy, "~> 2.7.0"}` to your mix.exs once your app has been created.
+
+## Phoenix
+
+To check that we are on Elixir 1.6 and Erlang 20 or later, run:
+
+```
+elixir -v Erlang/OTP 20 [erts-9.3] [source] [64-bit] [smp:8:8] [async-threads:10] [hipe] [kernel-poll:false] [dtrace]   Elixir 1.6.3 
+```
+
+Once we have Elixir and Erlang, we are ready to install the Phoenix application generator:
+
+```
+$ mix archive.install hex phx_new 1.5.12 
+```
+
+We will use this generator to generate new applications in the next guide, called [Up and Running](https://hexdocs.pm/phoenix/up_and_running.html).
+
+## Optional Dependencies
+### Node.js
+
+Node.js is an optional dependency. Phoenix will use [webpack](https://webpack.js.org/) to compile static assets (JavaScript, CSS, etc), by default. Webpack uses the node package manager (npm) to install its dependencies, and npm requires Node.js.
+
+If we don't have any static assets, or we want to use another build tool, we can pass the `--no-webpack` flag when creating a new application and Node.js won't be required at all.
+
+We can get Node.js from the [download page](https://nodejs.org/en/download/). When selecting a package to download, it's important to note that Phoenix requires version 5.0.0 or greater.
+
+Mac OS X users can also install Node.js via [homebrew](https://brew.sh/).
+
+### PostgreSQL
+
+PostgreSQL is a relational database server. Phoenix configures applications to use it by default, but we can switch to MySQL or MSSQL by passing the `--database` flag when creating a new application.
+
+In order to talk to databases, Phoenix applications use another Elixir package, called [Ecto](https://github.com/elixir-ecto/ecto). If you don't plan to use databases in your application, you can pass the `--no-ecto` flag.
+
+However, if you are just getting started with Phoenix, we recommend you to install PostgreSQL and make sure it is running. The PostgreSQL wiki has [installation guides](https://wiki.postgresql.org/wiki/Detailed_installation_guides) for a number of different systems.
+
+Phoenix provides a very handy feature called Live Reloading. As you change your views or your assets, it automatically reloads the page in the browser. In order for this functionality to work, you need a filesystem watcher.
+
+Mac OS X and Windows users already have a filesystem watcher but Linux users must install inotify-tools. Please consult the [inotify-tools wiki](https://github.com/rvoicilas/inotify-tools/wiki) for distribution-specific installation instructions.
+
+## Summary
+
+At the end of this section, you must have installed Elixir, Hex, Phoenix, PostgreSQL and Node.js. Now that we have everything installed, let's create our first Phoenix application and get [up and running](https://hexdocs.pm/phoenix/up_and_running.html).
