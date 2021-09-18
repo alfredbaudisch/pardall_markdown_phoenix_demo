@@ -1,4 +1,4 @@
-# PardallMarkdown Phoenix LiveView Demo
+# PardallMarkdown Phoenix LiveView Demo [![Donate using PayPal](https://raw.githubusercontent.com/laurent22/joplin/dev/Assets/WebsiteAssets/images/badges/Donate-PayPal-green.svg)](https://www.paypal.com/donate?hosted_button_id=FC5FTRRE3548C) [![Become a patron](https://raw.githubusercontent.com/laurent22/joplin/dev/Assets/WebsiteAssets/images/badges/Patreon-Badge.svg)](https://www.patreon.com/alfredbaudisch)
 
 Demo project for the [PardallMarkdown](https://github.com/alfredbaudisch/pardall_markdown) framework. 
 
@@ -17,11 +17,13 @@ See PardallMarkdown in action and learn how to use it by following this video:
 Check [PardallMarkdown](https://github.com/alfredbaudisch/pardall_markdown) repository's README and or the library documentation.
 
 # Demo instructions
-To start your Phoenix server:
-
+- [Configure](https://github.com/alfredbaudisch/pardall_markdown#usage-in-elixir-otp-applications) the application. You can use the included local "sample_content" folder, or change to another folder.
 - Install dependencies with `mix deps.get`
-- Create and migrate your database with `mix ecto.setup`
-- Install Node.js dependencies with `npm install` inside the `assets` directory
 - Start Phoenix endpoint with `mix phx.server`
+- Visit [`localhost:4000`](http://localhost:4000).
+- Change content from inside the content folder and see it being reflected in the website.
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+# How to use the Sample application for your own website?
+- Change the [configuration](https://github.com/alfredbaudisch/pardall_markdown#usage-in-elixir-otp-applications) accordingly, especially the `root_path` path.
+- Adjust the Phoenix.LiveView views and components accordingly.
+- Deploy!
