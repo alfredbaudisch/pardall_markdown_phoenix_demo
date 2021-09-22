@@ -27,6 +27,7 @@ defmodule PardallMarkdownWeb.ConnCase do
       alias PardallMarkdownWeb.Router.Helpers, as: Routes
 
       import PardallMarkdownWeb.ContentHelpers
+      import PardallMarkdownWeb.PardallMarkdownHelpers
 
       # The default endpoint for testing
       @endpoint PardallMarkdownWeb.Endpoint
@@ -34,6 +35,7 @@ defmodule PardallMarkdownWeb.ConnCase do
   end
 
   setup _tags do
+    Application.ensure_all_started(:pardall_markdown_web)
     Application.ensure_all_started(:pardall_markdown)
     # wait the Markdown content to be parsed and built
     Process.sleep(100)

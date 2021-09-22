@@ -11,7 +11,7 @@ config :pardall_markdown_phoenix_demo, PardallMarkdownWeb.Endpoint,
 
 config :pardall_markdown, PardallMarkdown.Content,
   root_path: "./test/content",
-  static_assets_folder_name: "static",
+  static_assets_path: "./test/content/static",
   cache_name: :content_cache,
   index_cache_name: :content_index_cache
 

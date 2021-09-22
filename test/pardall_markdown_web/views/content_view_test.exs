@@ -1,7 +1,7 @@
 defmodule PardallMarkdownWeb.ContentViewTest do
   use PardallMarkdownWeb.ConnCase, async: true
 
-  alias PardallMarkdown.Content.Repository
+  alias PardallMarkdown.Repository
   alias PardallMarkdown.Content.HtmlUtils
 
   test "taxonomy tree is generated correctly" do
