@@ -19,16 +19,17 @@ config :pardall_markdown_phoenix_demo, PardallMarkdown.Content,
   site_name: "PardallMarkdown"
 
 config :pardall_markdown, PardallMarkdown.Content,
-  # This can be any relative or absolute path, including outside of the application,
-  # which is actually, the main use case for PardallMarkdown
   root_path: "./sample_content",
-  static_assets_folder_name: "static",
+  static_assets_path: "./sample_content/static",
   cache_name: :content_cache,
   index_cache_name: :content_index_cache,
   recheck_pending_file_events_interval: 1_000,
   content_tree_display_home: false,
   convert_internal_links_to_live_links: true,
-  notify_content_reloaded: &PardallMarkdownWeb.pardall_markdown_notifier/0
+  notify_content_reloaded: &PardallMarkdownWeb.pardall_markdown_notifier/0,
+  is_markdown_metadata_required: true,
+  is_content_draft_by_default: true,
+  should_try_split_content_title_from_first_line: false
 
 # Configures Elixir's Logger
 config :logger, :console,

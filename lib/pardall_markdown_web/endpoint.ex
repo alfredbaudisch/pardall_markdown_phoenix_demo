@@ -28,10 +28,9 @@ defmodule PardallMarkdownWeb.Endpoint do
     only: ~w(assets fonts images favicon.ico robots.txt)
 
   plug Plug.Static,
-    at: "/",
-    from: Content.Utils.root_path(),
-    gzip: true,
-    only: [Content.Utils.static_assets_folder_name()]
+    at: "/static/",
+    from: Content.Utils.static_assets_path(),
+    gzip: true
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.

@@ -13,7 +13,7 @@ defmodule PardallMarkdownWeb.Live.Content do
     {:ok, socket |> assign(:slug, slug) |> load_content()}
   end
 
-  def render(%{content: %Post{}, top_taxonomy: %{slug: "/documentation"}} = assigns),
+  def render(%{content: %Post{}, top_taxonomy: %{slug: slug}} = assigns) when slug in ["/documentation", "/wiki"],
     do:
       Phoenix.View.render(
         PardallMarkdownWeb.ContentView,
