@@ -46,7 +46,7 @@ defmodule PardallMarkdownWeb.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
       {:esbuild, "~> 0.2", runtime: Mix.env() == :dev},
-      {:pardall_markdown, "~> 0.3.1"}
+      {:pardall_markdown, "~> 0.3.2"}
     ]
   end
 
