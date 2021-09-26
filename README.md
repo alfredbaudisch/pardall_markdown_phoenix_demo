@@ -1,6 +1,8 @@
 # PardallMarkdown Phoenix LiveView Demo [![Donate using PayPal](https://raw.githubusercontent.com/laurent22/joplin/dev/Assets/WebsiteAssets/images/badges/Donate-PayPal-green.svg)](https://www.paypal.com/donate?hosted_button_id=FC5FTRRE3548C) [![Become a patron](https://raw.githubusercontent.com/laurent22/joplin/dev/Assets/WebsiteAssets/images/badges/Patreon-Badge.svg)](https://www.patreon.com/alfredbaudisch)
 
-Demo project for the [PardallMarkdown](https://github.com/alfredbaudisch/pardall_markdown) framework. 
+Demo project for the [PardallMarkdown](https://github.com/alfredbaudisch/pardall_markdown) framework.
+
+Production website running with this template: https://pardall.xyz. Notice that this website is my own experimental Wiki, and the content is not the same as the included sample content in this repository, but other than that, it's the same source code.
 
 # Demo Features
 - Example **Phoenix.LiveView website** that contains both **a Blog and a Documentation section**, both powered by PardallMarkdown **instant updates**.
