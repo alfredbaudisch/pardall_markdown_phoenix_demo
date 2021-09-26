@@ -3,7 +3,12 @@
     <article class="blog-post">
       <nav class="crumbs"><%= raw taxonomy_tree_list(@live_content.taxonomies) %></nav>
       <h1 class="blog-post-title"><%= @live_content.title %></h1>      
-      <p class="blog-post-meta"><%= format_date(@live_content.date) %></p>      
+      <p class="blog-post-meta"><%= format_date(@live_content.date) %></p>
+
+      <div class="d-sm-block d-md-none">
+        <h6>Table of Contents</h6>
+        <%= raw post_toc_list(@live_content.toc) %>
+      </div>
 
       <%= if(not @live_content.is_published) do %>
       <p class="alert alert-danger" role="alert">
@@ -15,7 +20,7 @@
     </article>
   </div>
 
-  <div class="order-1 col-sm-12 col-md-4 col-lg-3 order-lg-2">
+  <div class="d-none order-1 col-sm-12 col-md-4 d-md-block col-lg-3 order-lg-2">
     <aside>
       <strong>Table of Contents</strong>
       <%= raw post_toc_list(@live_content.toc) %>
