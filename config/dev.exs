@@ -6,7 +6,7 @@ use Mix.Config
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with webpack to recompile .js and .css sources.
-config :pardall_markdown_phoenix_demo, PardallMarkdownWeb.Endpoint,
+config :pardall_web, PardallWeb.Endpoint,
   http: [port: 4000],
   debug_errors: true,
   code_reloader: true,
@@ -41,13 +41,13 @@ config :pardall_markdown_phoenix_demo, PardallMarkdownWeb.Endpoint,
 # different ports.
 
 # Watch static and templates for browser reloading.
-config :pardall_markdown_phoenix_demo, PardallMarkdownWeb.Endpoint,
+config :pardall_web, PardallWeb.Endpoint,
   live_reload: [
     patterns: [
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/pardall_markdown_web/(live|views)/.*(ex)$",
-      ~r"lib/pardall_markdown_web/templates/.*(eex)$"
+      ~r"lib/pardall_web/(live|views)/.*(ex)$",
+      ~r"lib/pardall_web/templates/.*(eex)$"
     ]
   ]
 

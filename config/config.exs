@@ -8,14 +8,17 @@
 use Mix.Config
 
 # Configures the endpoint
-config :pardall_markdown_phoenix_demo, PardallMarkdownWeb.Endpoint,
+config :pardall_web, PardallWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "vlzywSsO+2L1dOf6SVsVn7VJPMJ/oyr10wH7jCLcNl++SAuXkPQ20t/qDSefGEgI",
-  render_errors: [view: PardallMarkdownWeb.ErrorView, accepts: ~w(html json), layout: false],
-  pubsub_server: PardallMarkdownWeb.PubSub,
+  render_errors: [view: PardallWeb.ErrorView, accepts: ~w(html json), layout: false],
+  pubsub_server: PardallWeb.PubSub,
   live_view: [signing_salt: "5fx/EcCU"]
 
-config :pardall_markdown_phoenix_demo, PardallMarkdown.Content, site_name: "PardallMarkdown"
+config :pardall_web, PardallMarkdown.Content,
+  site_name: "PardallMarkdown",
+  site_description: "Phoenix.LiveView website powered by reactive Markdown content with PardallMarkdown."
+
 
 config :pardall_markdown, PardallMarkdown.Content,
   root_path: "./sample_content",
@@ -25,7 +28,7 @@ config :pardall_markdown, PardallMarkdown.Content,
   recheck_pending_file_events_interval: 1_000,
   content_tree_display_home: false,
   convert_internal_links_to_live_links: true,
-  notify_content_reloaded: &PardallMarkdownWeb.pardall_markdown_notifier/0,
+  notify_content_reloaded: &PardallWeb.pardall_markdown_notifier/0,
   is_markdown_metadata_required: true,
   is_content_draft_by_default: true,
   metadata_parser: PardallMarkdown.MetadataParser.ElixirMap

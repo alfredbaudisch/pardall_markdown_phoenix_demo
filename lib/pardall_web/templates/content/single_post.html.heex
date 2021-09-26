@@ -1,0 +1,43 @@
+<div class="d-flex row">
+  <div class="order-2 col-sm-12 col-md-8 col-lg-9 order-lg-1">
+    <article class="blog-post">
+      <nav class="crumbs"><%= raw taxonomy_tree_list(@live_content.taxonomies) %></nav>
+      <h1 class="blog-post-title"><%= @live_content.title %></h1>      
+      <p class="blog-post-meta"><%= format_date(@live_content.date) %></p>      
+
+      <%= if(not @live_content.is_published) do %>
+      <p class="alert alert-danger" role="alert">
+          This post is still a draft, its contents may change at any time
+      </p>
+      <% end %>
+
+      <%= raw(@live_content.content) %>
+    </article>
+  </div>
+
+  <div class="order-1 col-sm-12 col-md-4 col-lg-3 order-lg-2">
+    <aside>
+      <strong>Table of Contents</strong>
+      <%= raw post_toc_list(@live_content.toc) %>
+    </aside>
+  </div>
+</div>
+
+<%= if(has_next_or_previous_posts?(@live_content)) do %>
+  <div class="row">
+    <h1>More Content</h1>
+  </div>
+  <div class="row">
+    <%= if(not is_nil(@live_content.link) and not is_nil(@live_content.link.previous)) do %>
+    <div class="col-md-6">
+      <.card content={List.first(@live_content.link.previous.children)}/>
+    </div>
+    <% end %>
+
+    <%= if(not is_nil(@live_content.link) and not is_nil(@live_content.link.next)) do %>
+    <div class="col-md-6">
+      <.card content={List.first(@live_content.link.next.children)}/>
+    </div>
+    <% end %>
+  </div>
+<% end %>

@@ -1,0 +1,9 @@
+<%# SEO tags %>
+<link rel="canonical" href="<%= @canonical_url %>">
+
+<%= if @og do %>
+  <meta name="description" content="<%= @og.description %>">
+  <%= render("opengraph.html", %{og: @og, page_title: @page_title}) %>
+<% else %>
+  <meta name="description" content="<%= @site.description %>">
+<% end %>

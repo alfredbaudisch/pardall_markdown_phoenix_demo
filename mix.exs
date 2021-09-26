@@ -1,9 +1,9 @@
-defmodule PardallMarkdownWeb.MixProject do
+defmodule PardallWeb.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :pardall_markdown_phoenix_demo,
+      app: :pardall_web,
       version: "0.1.0",
       elixir: "~> 1.7",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -19,7 +19,7 @@ defmodule PardallMarkdownWeb.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {PardallMarkdownWeb.Application, []},
+      mod: {PardallWeb.Application, []},
       extra_applications: [:logger, :runtime_tools, :pardall_markdown]
     ]
   end
@@ -46,7 +46,7 @@ defmodule PardallMarkdownWeb.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
       {:esbuild, "~> 0.2", runtime: Mix.env() == :dev},
-      {:pardall_markdown, "~> 0.3.2"}
+      {:pardall_markdown, "~> 0.3.3"}
     ]
   end
 

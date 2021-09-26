@@ -6,7 +6,7 @@ Demo project for the [PardallMarkdown](https://github.com/alfredbaudisch/pardall
 - Example **Phoenix.LiveView website** that contains both **a Blog and a Documentation section**, both powered by PardallMarkdown **instant updates**.
     - Showcases archive pages, trees, single posts, sidebars, table of contents, next and previous posts, static images, etc.
 - **[Sample content](./sample_content)**, with nested hierarchies, custom post metadata and taxonomy overrides and custom sorting. The sample content also includes local images and links.
-- **[HTML helpers](./lib/pardall_markdown_web/views/pardall_markdown_helpers.ex) for PardallMarkdown** content trees, taxonomy trees and table of contents.
+- **[HTML helpers](./lib/pardall_web/views/pardall_markdown_helpers.ex) for PardallMarkdown** content trees, taxonomy trees and table of contents.
 - HTML helper and example to create a **collapsible PardallMarkdown content tree**.
 
 # Video Demo and Tutorial
