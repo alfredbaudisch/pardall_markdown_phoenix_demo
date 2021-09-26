@@ -1,0 +1,57 @@
+<div class="row">
+  <div class="d-none order-2 col-xl-2 order-lg-1 d-lg-blog d-xl-block">
+    <h6><%= live_redirect @top_taxonomy.title, to: @top_taxonomy.slug %></h6>
+    <nav class="collapsible_sidebar">
+      <%= raw collapsible_taxonomy_tree_list(@content_tree) %>
+    </nav>
+  </div>
+
+  <div class="order-1 col-xl-10 order-lg-2">
+    <div class="row">
+      <article class="order-2 col-md-8 col-lg-9 blog-post order-lg-1">
+        <nav class="crumbs"><%= raw taxonomy_tree_list(@live_content.taxonomies) %></nav>
+        <h1 class="blog-post-title"><%= @live_content.title %></h1>      
+        <p class="blog-post-meta"><%= format_date(@live_content.date) %></p>  
+
+        <div class="d-sm-block d-md-none">
+          <h6>Table of Contents</h6>
+          <%= raw post_toc_list(@live_content.toc) %>
+        </div>    
+
+        <%= if(not @live_content.is_published) do %>
+        <p class="alert alert-danger" role="alert">
+            This post is still a draft, its contents may change at any time
+        </p>
+        <% end %>
+
+        <%= raw(@live_content.content) %>
+      </article>
+
+      <div class="d-none order-1 col-md-4 d-md-block col-lg-3 order-lg-2" id="toc">
+        <aside>
+          <h6>Table of Contents</h6>
+          <%= raw post_toc_list(@live_content.toc) %>
+        </aside>
+      </div>
+    </div>
+
+    <%= if(has_next_or_previous_posts?(@live_content)) do %>
+    <div class="row">
+      <h1>More Content</h1>
+    </div>
+    <div class="row">
+      <%= if(not is_nil(@live_content.link) and not is_nil(@live_content.link.previous)) do %>
+      <div class="col-md-6">
+        <.card content={List.first(@live_content.link.previous.children)}/>
+      </div>
+      <% end %>
+
+      <%= if(not is_nil(@live_content.link) and not is_nil(@live_content.link.next)) do %>
+      <div class="col-md-6">
+        <.card content={List.first(@live_content.link.next.children)}/>
+      </div>
+      <% end %>
+    </div>
+    <% end %>    
+  </div>
+</div>
