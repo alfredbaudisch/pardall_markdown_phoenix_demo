@@ -7,7 +7,7 @@ Production website running with this template: https://pardall.xyz. Notice that 
 # Demo Features
 - Example **Phoenix.LiveView website** that contains both **a Blog and a Documentation section**, both powered by PardallMarkdown **instant updates**.
     - Showcases archive pages, trees, single posts, sidebars, table of contents, next and previous posts, static images, etc.
-- **[Sample content](./sample_content)**, with nested hierarchies, custom post metadata and taxonomy overrides and custom sorting. The sample content also includes local images and links.
+- **[Sample content](https://github.com/alfredbaudisch/pardall_markdown_sample_content)**, with nested hierarchies, custom post metadata and taxonomy overrides and custom sorting. The sample content also includes local images and links.
 - **[HTML helpers](./lib/pardall_web/views/pardall_markdown_helpers.ex) for PardallMarkdown** content trees, taxonomy trees and table of contents.
 - HTML helper and example to create a **collapsible PardallMarkdown content tree**.
 
@@ -18,9 +18,11 @@ See PardallMarkdown in action and learn how to use it by following this video:
 # Want to know more?
 Check [PardallMarkdown](https://github.com/alfredbaudisch/pardall_markdown) repository's README and or the library documentation.
 
-# Demo instructions
-- [Configure](https://github.com/alfredbaudisch/pardall_markdown#usage-in-elixir-otp-applications) the application. You can use the included local "sample_content" folder, or change to another folder.
+# How to run the demo?
+- [Configure](https://github.com/alfredbaudisch/pardall_markdown#usage-in-elixir-otp-applications) the application. You can use the included local "sample_content" from the demo `remote_repository_url: "https://github.com/alfredbaudisch/pardall_markdown_sample_content",` sample content repository, or change to another folder and/or another repository.
+    - Remember that `root_path` is required, but `remote_repository_url` is optional. You can use content from a folder, without pulling it from a repository.
 - Install dependencies with `mix deps.get`
+- Install JS deps (currently only "top_bar" to make the LiveView experience a little better): `cd assets & npm install`
 - Start Phoenix endpoint with `mix phx.server`
 - Visit [`localhost:4000`](http://localhost:4000).
 - Change content from inside the content folder and see it being reflected in the website.
