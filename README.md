@@ -19,7 +19,7 @@ See PardallMarkdown in action and learn how to use it by following this video:
 Check [PardallMarkdown](https://github.com/alfredbaudisch/pardall_markdown) repository's README and or the library documentation.
 
 # How to run the demo?
-- [Configure](https://github.com/alfredbaudisch/pardall_markdown#usage-in-elixir-otp-applications) the application. You can use the included local "sample_content" from the demo `remote_repository_url: "https://github.com/alfredbaudisch/pardall_markdown_sample_content",` sample content repository, or change to another folder and/or another repository.
+- [Configure](https://github.com/alfredbaudisch/pardall_markdown#usage-in-elixir-otp-applications) the application. You can use the included local "sample_content" `remote_repository_url: "https://github.com/alfredbaudisch/pardall_markdown_sample_content"` sample content repository, or change to another folder and/or another repository.
     - Remember that `root_path` is required, but `remote_repository_url` is optional. You can use content from a folder, without pulling it from a repository.
 - Install dependencies with `mix deps.get`
 - Install JS deps (currently only "top_bar" to make the LiveView experience a little better): `cd assets & npm install`
