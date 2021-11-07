@@ -36,4 +36,4 @@ npm-debug.log
 /config/prod.secret.exs
 /config/runtime.exs
 
-/sample_content
+/content

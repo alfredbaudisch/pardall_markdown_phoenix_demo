@@ -21,8 +21,9 @@ config :pardall_web, PardallMarkdown.Content,
 
 
 config :pardall_markdown, PardallMarkdown.Content,
-  root_path: "./sample_content",
-  static_assets_path: "./sample_content/static",
+  remote_repository_local_path: "./content",
+  root_path: "./content",
+  static_assets_path: "./content/static",
   remote_repository_url: "https://github.com/alfredbaudisch/pardall_markdown_sample_content",
   recheck_pending_remote_events_interval: 15_000,
   cache_name: :content_cache,
