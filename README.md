@@ -2,7 +2,7 @@
 
 Demo project for the [PardallMarkdown](https://github.com/alfredbaudisch/pardall_markdown) framework.
 
-Production website running with this template: https://pardall.xyz. *Notice that the website Pardall.xyz is my own experimental Wiki, and the content is not the same as the [demo sample content](https://github.com/alfredbaudisch/pardall_markdown_sample_content) used in this demo application, but other than that, it's the same source code (pardall.xyz content comes from the [alfredbaudisch/pardall.xyz_content](https://github.com/alfredbaudisch/pardall.xyz_content) repository)*.
+Production website demo running with this template. *Check the [demo sample content](https://github.com/alfredbaudisch/pardall_markdown_sample_content) and my old wiki's [alfredbaudisch/pardall.xyz_content](https://github.com/alfredbaudisch/pardall.xyz_content) repository)*.
 
 # Demo Features
 - Example **Phoenix.LiveView website** that contains both **a Blog and a Documentation section**, both powered by PardallMarkdown **instant updates**.
